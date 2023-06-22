@@ -5,6 +5,14 @@ declare module '@mui/material/Typography' {
 }
 
 const themeOptions = {
+    palette: {
+        primary: {
+            main: "#7a003c"
+        },
+        secondary: {
+            main: "#fdbf57"
+        }
+    },
     typography: {
         h1: {
             fontFamily: 'Roboto Condensed',
@@ -33,6 +41,18 @@ const themeOptions = {
             fontSize: '15pt',
         },
     },
+    shape: {
+        borderRadius: 28,
+    },
+    components: {
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 8,
+                },
+            },
+        },
+    }
 }
 
 export default themeOptions

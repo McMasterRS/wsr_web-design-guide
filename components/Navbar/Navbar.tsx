@@ -13,6 +13,8 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import {useTheme} from '@mui/material/styles'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
+import styles from '@/styles/NavBar.module.css'
+import {MacIconNavButton, MacNavButton,} from '@/components/MacComponents/MacNavButton'
 
 const pages = [
     ['Page 1', '/page_1'],
@@ -40,8 +42,19 @@ export default function Navbar() {
         >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
+                    <Box
+                        component="img"
+                        sx={{
+                            height: 78.31,
+                            width: 140,
+                            display: 'flex'
+                        }}
+                        alt="McMaster Logo"
+                        src="/assets/logo.png"
+                        style={imgStyle}
+                    />
                     <Typography
-                        variant="h5"
+                        variant="h3"
                         noWrap
                         component={Link}
                         href="/"
@@ -51,19 +64,25 @@ export default function Navbar() {
                             textDecoration: 'none',
                             color: 'inherit',
                         }}
+                        className={styles.title}
                     >
                         MacApp
                     </Typography>
                     <Box sx={{flexGrow: 1, display: 'flex'}}>
                         {pages.map(page => (
-                            <Button
+                            <MacNavButton
                                 key={page[0]}
                                 component={Link}
                                 href={page[1]}
                                 sx={{my: 2, color: 'white', display: 'block'}}
+                                className={
+                                    currentRoute === page[1]
+                                        ? styles.active
+                                        : styles.nonActive
+                                }
                             >
                                 {page[0]}
-                            </Button>
+                            </MacNavButton>
                         ))}
                     </Box>
                     <Box sx={{paddingRight: 1, display: 'flex'}}>
@@ -74,7 +93,7 @@ export default function Navbar() {
                                     : 'Switch to Dark Mode'
                             }
                         >
-                            <IconButton
+                            <MacIconNavButton
                                 sx={{ml: 1}}
                                 color="inherit"
                             >
@@ -83,19 +102,24 @@ export default function Navbar() {
                                 ) : (
                                     <Brightness4Icon />
                                 )}
-                            </IconButton>
+                            </MacIconNavButton>
                         </Tooltip>
                     </Box>
                     <Box sx={{paddingRight: 1, display: 'flex'}}>
                         <Tooltip title="Settings">
-                            <IconButton
+                            <MacIconNavButton
                                 aria-label="settings"
                                 color="inherit"
                                 component={Link}
                                 href="/settings"
+                                className={
+                                    currentRoute === '/settings'
+                                        ? styles.active
+                                        : styles.nonActive
+                                }
                             >
                                 <SettingsIcon />
-                            </IconButton>
+                            </MacIconNavButton>
                         </Tooltip>
                     </Box>
                 </Toolbar>
