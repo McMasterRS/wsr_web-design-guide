@@ -16,9 +16,12 @@ export default function Settings() {
         <main className={styles.settings}>
             <Container>
                 <BreadCrumbs />
-                <h2>
+                <Typography
+                    sx={{display: 'flex', justifyContent: 'center'}}
+                    variant="h2"
+                    gutterBottom>
                     Settings
-                </h2>
+                </Typography>
                 <Box sx={{width: '100%', maxWidth: 1000}}>
                     <VerticalTabs />
                 </Box>

@@ -1,13 +1,13 @@
 import React from "react";
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import Typography from '@mui/material/Typography'
 import Stack from "@mui/material/Stack";
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import {MuiFileInput} from 'mui-file-input'
 import Button from "@mui/material/Button";
+import Typography from '@mui/material/Typography'
 
 export interface SnackbarMessage {
     message: string;
@@ -97,7 +97,7 @@ export default function Home() {
                     alignItems="center"
                     spacing={5}
                 >
-                    <h1>Hello World!</h1>
+                    <Typography variant="h1">Hello World!</Typography>
                     <Stack
                         direction="row"
                         justifyContent="space-between"

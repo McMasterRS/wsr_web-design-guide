@@ -8,6 +8,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete'
 import {SpeedDial, SpeedDialAction, SpeedDialIcon} from "@mui/material";
 import BreadCrumbs from "@/components/BreadCrumbs/BreadCrumbs";
+import Typography from '@mui/material/Typography'
 
 export default function Page_2() {
     useEffect(() => {
@@ -34,7 +35,7 @@ export default function Page_2() {
                         display="flex"
                         justifyContent="center"
                         alignItems="center">
-                        <h1>Page 2</h1>
+                        <Typography variant="h1">Page 2</Typography>
                         <SpeedDial
                             ariaLabel="Demo SpeedDial"
                             sx={{

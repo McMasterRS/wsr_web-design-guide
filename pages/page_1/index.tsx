@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import DownloadIcon from '@mui/icons-material/Download';
 import {alpha, styled} from '@mui/material/styles';
+import Typography from '@mui/material/Typography'
 
 const StyledMenu = styled((props: MenuProps) => (
     <Menu
@@ -78,7 +79,7 @@ export default function Page_1() {
                         display="flex"
                         justifyContent="center"
                         alignItems="center">
-                        <h1>Page 1</h1>
+                        <Typography variant="h1">Page 1</Typography>
                         <Button
                             id="download-button"
                             sx={{

@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import BreadCrumbs from "@/components/BreadCrumbs/BreadCrumbs";
+import Typography from '@mui/material/Typography'
 
 export default function Support() {
     useEffect(() => {
@@ -18,7 +19,7 @@ export default function Support() {
                         display="flex"
                         justifyContent="center"
                         alignItems="center">
-                        <h1>Help and Support</h1>
+                        <Typography variant="h1">Help and Support</Typography>
                     </Box>
                 </Container>
             </main>
