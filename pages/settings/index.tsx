@@ -1,5 +1,4 @@
 import styles from '@/styles/Home.module.css'
-import Typography from '@mui/material/Typography'
 import * as React from 'react'
 import {useEffect} from 'react'
 import Box from '@mui/material/Box'
