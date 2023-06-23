@@ -36,6 +36,15 @@ const themeOptions = {
     shape: {
         borderRadius: 28,
     },
+    components: {
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 8,
+                },
+            },
+        },
+    }
 }
 
 export default themeOptions
