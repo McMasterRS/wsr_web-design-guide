@@ -6,8 +6,6 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
 import {Tooltip} from "@mui/material";
 import SettingsIcon from '@mui/icons-material/Settings'
 import {useTheme} from '@mui/material/styles'
@@ -15,6 +13,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import styles from '@/styles/NavBar.module.css'
 import {MacIconNavButton, MacNavButton,} from '@/components/MacComponents/MacNavButton'
+import {ColorModeContext} from '@/pages/_app'
 
 const pages = [
     ['Page 1', '/page_1'],
@@ -23,6 +22,7 @@ const pages = [
 
 export default function Navbar() {
     const theme = useTheme()
+    const colorMode = React.useContext(ColorModeContext)
 
     const imgStyle = {
         paddingTop: '10px',
@@ -96,6 +96,7 @@ export default function Navbar() {
                             <MacIconNavButton
                                 sx={{ml: 1}}
                                 color="inherit"
+                                onClick={colorMode.toggleColorMode}
                             >
                                 {theme.palette.mode === 'dark' ? (
                                     <Brightness7Icon />

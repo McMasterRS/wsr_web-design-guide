@@ -7,7 +7,7 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import Stack from '@mui/material/Stack'
-import Button from "@mui/material/Button";
+import {MacButton} from '@/components/MacComponents/MacButton'
 
 const breadcrumbNameMap: {[key: string]: string} = {
     '/page_1': 'Page 1',
@@ -33,9 +33,9 @@ export default function BreadCrumbs() {
     return (
         <Box sx={{paddingBottom: 2}}>
             <Stack direction="row" spacing={2}>
-                <Button variant="contained" onClick={() => router.back()}>
+                <MacButton variant="contained" mainColor="primary" onClick={() => router.back()}>
                     <ArrowBackIcon />
-                </Button>
+                </MacButton>
                 <Breadcrumbs sx={{paddingTop: 1}} aria-label="breadcrumb">
                     <LinkRouter underline="hover" color="inherit" href="/">
                         Home

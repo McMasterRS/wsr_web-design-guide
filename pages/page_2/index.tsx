@@ -1,14 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from '@/styles/Home.module.css'
-import {useEffect} from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import EditIcon from '@mui/icons-material/Edit';
 import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete'
-import {SpeedDial, SpeedDialAction, SpeedDialIcon} from "@mui/material";
+import {SpeedDialAction, SpeedDialIcon} from "@mui/material";
 import BreadCrumbs from "@/components/BreadCrumbs/BreadCrumbs";
 import Typography from '@mui/material/Typography'
+import {MacSpeedDial} from "@/components/MacComponents/MacSpeedDial";
 
 export default function Page_2() {
     useEffect(() => {
@@ -36,7 +36,7 @@ export default function Page_2() {
                         justifyContent="center"
                         alignItems="center">
                         <Typography variant="h1">Page 2</Typography>
-                        <SpeedDial
+                        <MacSpeedDial
                             ariaLabel="Demo SpeedDial"
                             sx={{
                                 position: 'fixed',
@@ -49,6 +49,7 @@ export default function Page_2() {
                             onOpen={handleOpenSD}
                             open={openSD}
                             direction="down"
+                            mainColor="primary"
                         >
                             {actions.map(action => (
                                 <SpeedDialAction
@@ -58,7 +59,7 @@ export default function Page_2() {
                                     onClick={action.action}
                                 />
                             ))}
-                        </SpeedDial>
+                        </MacSpeedDial>
                     </Box>
                 </Container>
             </main>

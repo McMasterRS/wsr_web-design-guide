@@ -1,16 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from '@/styles/Home.module.css'
-import {useEffect} from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import BreadCrumbs from "@/components/BreadCrumbs/BreadCrumbs";
-import Button from "@mui/material/Button";
 import Menu, {MenuProps} from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import DownloadIcon from '@mui/icons-material/Download';
 import {alpha, styled} from '@mui/material/styles';
 import Typography from '@mui/material/Typography'
+import {MacButton} from "@/components/MacComponents/MacButton";
 
 const StyledMenu = styled((props: MenuProps) => (
     <Menu
@@ -80,7 +79,7 @@ export default function Page_1() {
                         justifyContent="center"
                         alignItems="center">
                         <Typography variant="h1">Page 1</Typography>
-                        <Button
+                        <MacButton
                             id="download-button"
                             sx={{
                                 position: 'fixed',
@@ -98,9 +97,10 @@ export default function Page_1() {
                             onClick={handleClickMenu}
                             startIcon={<DownloadIcon />}
                             endIcon={<KeyboardArrowDownIcon />}
+                            mainColor="secondary"
                         >
                             Download
-                        </Button>
+                        </MacButton>
 
                         <StyledMenu
                             id="download-menu"

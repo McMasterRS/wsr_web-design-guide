@@ -6,8 +6,8 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import {MuiFileInput} from 'mui-file-input'
-import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography'
+import {MacButton} from '@/components/MacComponents/MacButton'
 
 export interface SnackbarMessage {
     message: string;
@@ -104,8 +104,20 @@ export default function Home() {
                         alignItems="center"
                         spacing={2}
                     >
-                        <Button variant="contained" onClick={handleClick('Primary Button Clicked!')}>Primary</Button>
-                        <Button variant="contained" onClick={handleClick('Secondary Button Clicked!')}>Secondary</Button>
+                        <MacButton
+                            variant="contained"
+                            mainColor="primary"
+                            onClick={handleClick('Primary Button Clicked!')}
+                        >
+                            Primary
+                        </MacButton>
+                        <MacButton
+                            variant="contained"
+                            mainColor="secondary"
+                            onClick={handleClick('Secondary Button Clicked!')}
+                        >
+                            Secondary
+                        </MacButton>
                     </Stack>
                     <MuiFileInput
                         multiple
