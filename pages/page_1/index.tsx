@@ -11,6 +11,7 @@ import {alpha, styled, useTheme} from '@mui/material/styles';
 import Typography from '@mui/material/Typography'
 import {MacButton} from "@/components/MacComponents/MacButton";
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Tooltip from "@mui/material/Tooltip";
 
 const StyledMenu = styled((props: MenuProps) => (
     <Menu
@@ -80,28 +81,30 @@ export default function Page_1() {
                         justifyContent="center"
                         alignItems="center">
                         <Typography variant="h1">Page 1</Typography>
-                        <MacButton
-                            id="download-button"
-                            sx={{
-                                position: 'fixed',
-                                top: 20,
-                                right: 10,
-                                zIndex: 2000,
-                                display: 'flex'
-                            }}
-                            aria-controls={
-                                openMenu ? 'download-menu' : undefined
-                            }
-                            aria-haspopup="true"
-                            aria-expanded={openMenu ? 'true' : undefined}
-                            variant="contained"
-                            onClick={handleClickMenu}
-                            startIcon={<DownloadIcon />}
-                            endIcon={<KeyboardArrowDownIcon />}
-                            mainColor="secondary"
-                        >
-                            {useMediaQuery(useTheme().breakpoints.up('md')) ? 'Download' : ''}
-                        </MacButton>
+                        <Tooltip title={useMediaQuery(useTheme().breakpoints.down('md')) ? 'Download' : ''} >
+                            <MacButton
+                                id="download-button"
+                                sx={{
+                                    position: 'fixed',
+                                    top: 20,
+                                    right: 10,
+                                    zIndex: 2000,
+                                    display: 'flex'
+                                }}
+                                aria-controls={
+                                    openMenu ? 'download-menu' : undefined
+                                }
+                                aria-haspopup="true"
+                                aria-expanded={openMenu ? 'true' : undefined}
+                                variant="contained"
+                                onClick={handleClickMenu}
+                                startIcon={<DownloadIcon />}
+                                endIcon={<KeyboardArrowDownIcon />}
+                                mainColor="secondary"
+                            >
+                                {useMediaQuery(useTheme().breakpoints.up('md')) ? 'Download' : ''}
+                            </MacButton>
+                        </Tooltip>
 
                         <StyledMenu
                             id="download-menu"

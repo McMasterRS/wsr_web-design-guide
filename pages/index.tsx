@@ -8,6 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import {MuiFileInput} from 'mui-file-input'
 import Typography from '@mui/material/Typography'
 import {MacButton} from '@/components/MacComponents/MacButton'
+import {useTheme} from '@mui/material/styles'
 
 export interface SnackbarMessage {
     message: string;
@@ -125,6 +126,11 @@ export default function Home() {
                         value={selectedFiles}
                         onChange={handleChange}
                         hideSizeText
+                        sx={{
+                            "& .MuiFileInput-placeholder": {
+                                color:  (useTheme().palette.mode === 'light' ? '#767676' : '#d3d3d3') + '!important',
+                            },
+                        }}
                     />
                 </Stack>
             </main>

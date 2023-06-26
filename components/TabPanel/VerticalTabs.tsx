@@ -150,13 +150,16 @@ export default function VerticalTabs() {
                         Notifications
                     </Typography>
                     <FormControl sx={{m: 1, minWidth: 300}}>
-                        <InputLabel id="demo-simple-select-label">
+                        <InputLabel id="demo-simple-select-label" htmlFor="demo-simple-select">
                             Demo Dropdown Menu
                         </InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             label="Demo Dropdown Menu"
+                            inputProps={{
+                                id:'demo-simple-select',
+                            }}
                         >
                             <MenuItem value={1}>Option 1</MenuItem>
                             <MenuItem value={2}>Option 2</MenuItem>
