@@ -144,6 +144,7 @@ export default function VerticalTabs() {
                 <TabPanel value={value} index={0}>
                     <Typography
                         sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'left', paddingLeft: '10px'}}
+                        variant="settingTitle"
                         gutterBottom
                     >
                         Notifications
@@ -166,7 +167,7 @@ export default function VerticalTabs() {
                 <TabPanel value={value} index={1}>
                     <Typography
                         sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'left', paddingLeft: '10px'}}
-                        variant="h3"
+                        variant="settingTitle"
                         gutterBottom
                     >
                         Privacy
@@ -176,7 +177,7 @@ export default function VerticalTabs() {
                 <TabPanel value={value} index={2}>
                     <Typography
                         sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'left', paddingLeft: '10px'}}
-                        variant="h3"
+                        variant="settingTitle"
                         gutterBottom
                     >
                         Accessibility
@@ -186,7 +187,7 @@ export default function VerticalTabs() {
                 <TabPanel value={value} index={3}>
                     <Typography
                         sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'left', paddingLeft: '10px'}}
-                        variant="h3"
+                        variant="settingTitle"
                         gutterBottom
                     >
                         Account

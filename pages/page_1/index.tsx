@@ -7,9 +7,10 @@ import Menu, {MenuProps} from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import DownloadIcon from '@mui/icons-material/Download';
-import {alpha, styled} from '@mui/material/styles';
+import {alpha, styled, useTheme} from '@mui/material/styles';
 import Typography from '@mui/material/Typography'
 import {MacButton} from "@/components/MacComponents/MacButton";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const StyledMenu = styled((props: MenuProps) => (
     <Menu
@@ -99,7 +100,7 @@ export default function Page_1() {
                             endIcon={<KeyboardArrowDownIcon />}
                             mainColor="secondary"
                         >
-                            Download
+                            {useMediaQuery(useTheme().breakpoints.up('md')) ? 'Download' : ''}
                         </MacButton>
 
                         <StyledMenu
