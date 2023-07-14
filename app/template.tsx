@@ -1,17 +1,18 @@
-import type {AppProps} from 'next/app'
-import CssBaseline from '@mui/material/CssBaseline'
+'use client';
+
 import Navbar from "@/components/Navbar/Navbar";
+import CssBaseline from "@mui/material/CssBaseline";
 import Footer from "@/components/Footer/Footer";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import React from "react";
 import {createTheme, ThemeProvider} from '@mui/material/styles'
-import themeOptions from '@/config/theme'
-import React from 'react'
-import useMediaQuery from '@mui/material/useMediaQuery'
+import themeOptions from "@/config/theme";
 
 export const ColorModeContext = React.createContext({
     toggleColorMode: () => {},
 })
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function Template({children}: {children?: React.ReactNode} ) {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
     const [themeMode, setThemeMode] = React.useState<'light' | 'dark' | null>(null)
@@ -62,15 +63,17 @@ export default function App({ Component, pageProps }: AppProps) {
         [theme]
     )
 
-    return <>
-        <ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
-                <Navbar />
-                <CssBaseline />
-                <Component {...pageProps} />
-                <Footer />
-            </ThemeProvider>
-        </ColorModeContext.Provider>
+    return (
+        <>
+            <ColorModeContext.Provider value={colorMode}>
+                <ThemeProvider theme={theme}>
+                    <Navbar />
+                    <CssBaseline />
+                    {children}
+                    <Footer />
+                </ThemeProvider>
+            </ColorModeContext.Provider>
 
-    </>
+        </>
+    )
 }

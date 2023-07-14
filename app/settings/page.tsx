@@ -1,3 +1,5 @@
+'use client';
+
 import styles from '@/styles/Home.module.css'
 import Typography from '@mui/material/Typography'
 import * as React from 'react'
@@ -6,7 +8,6 @@ import Box from '@mui/material/Box'
 import VerticalTabs from '@/components/TabPanel/VerticalTabs'
 import {Container} from '@mui/material'
 import BreadCrumbs from "@/components/BreadCrumbs/BreadCrumbs";
-
 export default function Settings() {
     useEffect(() => {
         document.title = 'Settings'
