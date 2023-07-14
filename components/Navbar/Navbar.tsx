@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import Link from 'next/link'
-import {useRouter} from 'next/router'
+import {usePathname, useRouter} from 'next/navigation'
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import {Tooltip} from "@mui/material";
@@ -29,7 +29,7 @@ export default function Navbar() {
     }
 
     const router = useRouter()
-    const currentRoute = router.pathname
+    const currentRoute = usePathname()
 
     return (
         <AppBar

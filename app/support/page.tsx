@@ -1,3 +1,5 @@
+'use client';
+
 import styles from '@/styles/Home.module.css'
 import {useEffect} from "react";
 import Container from "@mui/material/Container";

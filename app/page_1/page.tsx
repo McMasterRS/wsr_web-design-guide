@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import styles from '@/styles/Home.module.css'
 import {useEffect} from "react";
@@ -75,9 +77,9 @@ export default function Page_1() {
                 <Container>
                     <BreadCrumbs />
                     <Box sx={{height: 78, transform: 'translateZ(0px)', flexGrow: 1}}
-                        display="flex"
-                        justifyContent="center"
-                        alignItems="center">
+                         display="flex"
+                         justifyContent="center"
+                         alignItems="center">
                         <h1>Page 1</h1>
                         <Button
                             id="download-button"
