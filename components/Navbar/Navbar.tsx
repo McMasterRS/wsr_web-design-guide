@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import Link from 'next/link'
-import {useRouter} from 'next/router'
+import {usePathname, useRouter} from 'next/navigation'
 import {Tooltip} from "@mui/material";
 import SettingsIcon from '@mui/icons-material/Settings'
 import {useTheme} from '@mui/material/styles'
@@ -13,7 +13,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import styles from '@/styles/NavBar.module.css'
 import {MacIconNavButton, MacNavButton,} from '@/components/MacComponents/MacNavButton'
-import {ColorModeContext} from '@/pages/_app'
+import {ColorModeContext} from "@/app/template";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ClearIcon from '@mui/icons-material/Clear';
@@ -41,7 +41,7 @@ export default function Navbar() {
     }
 
     const router = useRouter()
-    const currentRoute = router.pathname
+    const currentRoute = usePathname()
 
     const [state, setState] = React.useState(false);
 

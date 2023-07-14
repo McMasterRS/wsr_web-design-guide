@@ -1,3 +1,5 @@
+'use client';
+
 import React, {useEffect} from "react";
 import styles from '@/styles/Home.module.css'
 import Container from "@mui/material/Container";
@@ -77,9 +79,9 @@ export default function Page_1() {
                 <Container>
                     <BreadCrumbs />
                     <Box sx={{height: 78, transform: 'translateZ(0px)', flexGrow: 1}}
-                        display="flex"
-                        justifyContent="center"
-                        alignItems="center">
+                         display="flex"
+                         justifyContent="center"
+                         alignItems="center">
                         <Typography variant="h1">Page 1</Typography>
                         <Tooltip title={useMediaQuery(useTheme().breakpoints.down('md')) ? 'Download' : ''} >
                             <MacButton
