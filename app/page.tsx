@@ -1,7 +1,6 @@
 'use client';
 
 import React from "react";
-import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import Stack from "@mui/material/Stack";
 import Snackbar from '@mui/material/Snackbar';
