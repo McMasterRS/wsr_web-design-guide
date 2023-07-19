@@ -1,4 +1,4 @@
-import {Roboto, Roboto_Condensed} from "@next/font/google";
+import {Roboto, Roboto_Condensed} from "next/font/google";
 
 const roboto = Roboto({
     weight: ['300', '700'],
