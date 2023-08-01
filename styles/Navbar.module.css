@@ -14,8 +14,3 @@
     color: #7a003c;
     background: white;
 }
-
-/* Specific styles when hover over the application title in the navbar */
-.title:hover {
-    color: #fdbf57;
-}

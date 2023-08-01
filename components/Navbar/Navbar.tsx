@@ -13,7 +13,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import styles from '@/styles/NavBar.module.css'
 import {MacIconNavButton, MacNavButton,} from '@/components/MacComponents/MacNavButton'
-import {ColorModeContext} from "@/app/template";
+import {ColorModeContext} from "@/components/Provider/Provider";
 
 const pages = [
     ['Page 1', '/page_1'],
@@ -36,8 +36,6 @@ export default function Navbar() {
     return (
         <AppBar
             position="relative"
-            enableColorOnDark
-            style={{backgroundImage: 'none'}}
             sx={{zIndex: theme => theme.zIndex.drawer + 1, borderRadius: 0}}
         >
             <Container maxWidth="xl">
@@ -63,8 +61,10 @@ export default function Navbar() {
                             display: 'flex',
                             textDecoration: 'none',
                             color: 'inherit',
+                            "&:hover": {
+                                color: useTheme().palette.secondary.main
+                            }
                         }}
-                        className={styles.title}
                     >
                         MacApp
                     </Typography>
