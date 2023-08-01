@@ -14,6 +14,22 @@ export function Provider({ children } : {children: React.ReactNode}) {
 
     const [themeMode, setThemeMode] = React.useState<'light' | 'dark' | null>(null)
 
+    const primary_color = themeMode == null
+        ? prefersDarkMode
+            ? '#ed89a3'
+            : '#7a003c'
+        : themeMode == 'light'
+            ? '#7a003c'
+            : '#ed89a3';
+
+    const secondary_color = themeMode == null
+        ? prefersDarkMode
+            ? '#fdd287'
+            : '#fdbf57'
+        : themeMode == 'light'
+            ? '#fdbf57'
+            : '#fdd287';
+
     const theme = React.useMemo(
         () =>
             createTheme({
@@ -26,24 +42,10 @@ export function Provider({ children } : {children: React.ReactNode}) {
                                 : 'light'
                             : themeMode,
                     primary: {
-                        main:
-                            themeMode == null
-                                ? prefersDarkMode
-                                    ? '#86174E'
-                                    : '#7a003c'
-                                : themeMode == 'light'
-                                    ? '#7a003c'
-                                    : '#86174E',
+                        main: primary_color
                     },
                     secondary: {
-                        main:
-                            themeMode == null
-                                ? prefersDarkMode
-                                    ? '#FDC566'
-                                    : '#fdbf57'
-                                : themeMode == 'light'
-                                    ? '#fdbf57'
-                                    : '#FDC566',
+                        main: secondary_color
                     },
                 },
             }),

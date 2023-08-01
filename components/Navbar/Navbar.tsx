@@ -110,8 +110,6 @@ export default function Navbar() {
     return (
         <AppBar
             position="relative"
-            enableColorOnDark
-            style={{backgroundImage: 'none'}}
             sx={{zIndex: theme => theme.zIndex.drawer + 1, borderRadius: 0}}
         >
             <Container maxWidth="xl">
