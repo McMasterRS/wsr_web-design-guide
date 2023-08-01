@@ -13,7 +13,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import styles from '@/styles/NavBar.module.css'
 import {MacIconNavButton, MacNavButton,} from '@/components/MacComponents/MacNavButton'
-import {ColorModeContext} from "@/app/template";
+import {ColorModeContext} from "@/components/Provider/Provider";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ClearIcon from '@mui/icons-material/Clear';
@@ -110,8 +110,6 @@ export default function Navbar() {
     return (
         <AppBar
             position="relative"
-            enableColorOnDark
-            style={{backgroundImage: 'none'}}
             sx={{zIndex: theme => theme.zIndex.drawer + 1, borderRadius: 0}}
         >
             <Container maxWidth="xl">
