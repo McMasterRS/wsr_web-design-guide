@@ -112,13 +112,13 @@ export default function Page_1() {
                             open={openMenu}
                             onClose={handleCloseMenu}
                         >
-                            <MenuItem onClick={handleClickMenu}>
+                            <MenuItem onClick={handleCloseMenu}>
                                 Format 1
                             </MenuItem>
-                            <MenuItem onClick={handleClickMenu}>
+                            <MenuItem onClick={handleCloseMenu}>
                                 Format 2
                             </MenuItem>
-                            <MenuItem onClick={handleClickMenu}>
+                            <MenuItem onClick={handleCloseMenu}>
                                 Format 3
                             </MenuItem>
                         </StyledMenu>

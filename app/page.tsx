@@ -9,8 +9,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import {MuiFileInput} from 'mui-file-input'
 import Button from "@mui/material/Button";
 
-
-
 export interface SnackbarMessage {
     message: string;
     key: number;
