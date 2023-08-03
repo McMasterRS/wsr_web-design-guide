@@ -113,13 +113,13 @@ export default function Page_1() {
                             onClose={handleCloseMenu}
                         >
                             <MenuItem onClick={handleCloseMenu}>
-                                Format 1
+                                File Format 1
                             </MenuItem>
                             <MenuItem onClick={handleCloseMenu}>
-                                Format 2
+                                File Format 2
                             </MenuItem>
                             <MenuItem onClick={handleCloseMenu}>
-                                Format 3
+                                File Format 3
                             </MenuItem>
                         </StyledMenu>
                     </Box>
