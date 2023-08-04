@@ -1,5 +1,3 @@
-'use client';
-
 import React, {useEffect} from "react";
 import styles from '@/styles/Home.module.css'
 import Container from "@mui/material/Container";
@@ -14,6 +12,8 @@ import Typography from '@mui/material/Typography'
 import {MacButton} from "@/components/MacComponents/MacButton";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Tooltip from "@mui/material/Tooltip";
+import {MacSwitch} from "@/components/MacComponents/MacSwitch";
+import {MacCheckbox} from "@/components/MacComponents/MacCheckbox";
 
 const StyledMenu = styled((props: MenuProps) => (
     <Menu
@@ -118,15 +118,19 @@ export default function Page_1() {
                             onClose={handleCloseMenu}
                         >
                             <MenuItem onClick={handleClickMenu}>
-                                Format 1
+                                File Format 1
                             </MenuItem>
                             <MenuItem onClick={handleClickMenu}>
-                                Format 2
+                                File Format 2
                             </MenuItem>
                             <MenuItem onClick={handleClickMenu}>
-                                Format 3
+                                File Format 3
                             </MenuItem>
                         </StyledMenu>
+                    </Box>
+                    <Box paddingLeft={5}>
+                        <MacSwitch {...{ inputProps: { 'aria-label': 'Switch' } }} />
+                        <MacCheckbox {...{ inputProps: { 'aria-label': 'Checkbox' } }} />
                     </Box>
                 </Container>
             </main>

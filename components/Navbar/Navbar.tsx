@@ -171,8 +171,10 @@ export default function Navbar() {
                                     flexGrow: 1,
                                     color: 'inherit',
                                     textDecoration: 'none',
+                                    "&:hover": {
+                                        color: useTheme().palette.secondary.main
+                                    }
                                 }}
-                                className={styles.title}
                             >
                                 MacApp
                             </Typography>
@@ -199,8 +201,10 @@ export default function Navbar() {
                             display: {xs: 'none', md: 'flex'},
                             textDecoration: 'none',
                             color: 'inherit',
+                            "&:hover": {
+                                color: useTheme().palette.secondary.main
+                            }
                         }}
-                        className={styles.title}
                     >
                         MacApp
                     </Typography>
