@@ -48,18 +48,6 @@ export function Provider({ children } : {children: React.ReactNode}) {
                         main: secondary_color
                     },
                 },
-                components: {
-                    ...themeOptions.components,
-                    MuiButtonBase: {
-                        styleOverrides: {
-                            root: {
-                                "&:focus-visible": {
-                                    outline: `2px solid ${primary_color}`,
-                                },
-                            },
-                        },
-                    }
-                }
             }),
         [themeMode, prefersDarkMode]
     )
