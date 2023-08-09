@@ -61,7 +61,7 @@ export function Provider({ children } : {children: React.ReactNode}) {
                     }
                 }
             }),
-        [themeMode, prefersDarkMode]
+        [themeMode, prefersDarkMode, primary_color, secondary_color]
     )
 
     const colorMode = React.useMemo(

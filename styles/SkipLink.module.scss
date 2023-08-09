@@ -1,11 +1,11 @@
 .skipLink {
-  margin-right: 1rem;
-  position: absolute;
-  transform: translateX(-200%);
-  transition: transform 0.3s;
+  margin-right: 1rem !important;
+  position: absolute !important;
+  transform: translateX(-200%) !important;
+  transition: transform 0.3s !important;
 
   &:focus {
-    position: absolute;
-    transform: translateX(0);
+    position: absolute !important;
+    transform: translateX(0) !important;
   }
 }
