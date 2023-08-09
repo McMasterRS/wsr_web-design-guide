@@ -24,6 +24,9 @@ import ListItemText from "@mui/material/ListItemText";
 import LooksOneIcon from '@mui/icons-material/LooksOne';
 import LooksTwoIcon from '@mui/icons-material/LooksTwo';
 import MenuIcon from '@mui/icons-material/Menu';
+import SkipLink from "@/components/SkipLink/SkipLink";
+import {SkipButton} from "@/components/SkipLink/SkipButton";
+import styles_skip from '@/styles/SkipLink.module.scss'
 
 const pages = [
     ['Page 1', '/page_1'],
@@ -112,6 +115,11 @@ export default function Navbar() {
             position="relative"
             sx={{zIndex: theme => theme.zIndex.drawer + 1, borderRadius: 0}}
         >
+            <Box sx={{zIndex: 1300}}>
+                <SkipLink className={styles_skip.skipLink} skipTo={"main:first-of-type"}>
+                    <SkipButton mainColor={"primary"} sx={{marginTop:2.4, marginLeft:2, color: 'white'}}>Skip to main content</SkipButton>
+                </SkipLink>
+            </Box>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
