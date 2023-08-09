@@ -22,6 +22,7 @@ const pages = [
 
 export default function Navbar() {
     const theme = useTheme()
+    // reading the value of the ColorModeContext imported from Provider
     const colorMode = React.useContext(ColorModeContext)
 
     const imgStyle = {
@@ -61,6 +62,7 @@ export default function Navbar() {
                             display: 'flex',
                             textDecoration: 'none',
                             color: 'inherit',
+                            // changing the color of the text to heritage gold when hovering over it
                             "&:hover": {
                                 color: useTheme().palette.secondary.main
                             }
@@ -76,6 +78,8 @@ export default function Navbar() {
                                 href={page[1]}
                                 sx={{my: 2, color: 'white', display: 'block'}}
                                 className={
+                                    // if the current route equals the URL associated with the button,
+                                    // then use the active style. Otherwise, use the inactive style
                                     currentRoute === page[1]
                                         ? styles.active
                                         : styles.nonActive
@@ -113,6 +117,8 @@ export default function Navbar() {
                                 color="inherit"
                                 component={Link}
                                 href="/settings"
+                                // if the current route equals '/settings',
+                                // then use the active style. Otherwise, use the inactive style
                                 className={
                                     currentRoute === '/settings'
                                         ? styles.active

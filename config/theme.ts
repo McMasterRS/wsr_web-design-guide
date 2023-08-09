@@ -1,5 +1,7 @@
+// importing the Roboto and Roboto Condensed fonts from Google Fonts
 import {Roboto, Roboto_Condensed} from "next/font/google";
 
+// specifying the weights and styles of the Roboto font
 const roboto = Roboto({
     weight: ['400', '900'],
     style: ['normal', 'italic'],
@@ -7,6 +9,7 @@ const roboto = Roboto({
     display: 'swap',
 })
 
+// specifying the weights and styles of the Roboto Condensed font
 const roboto_condensed = Roboto_Condensed({
     weight: ['400', '700'],
     style: ['normal', 'italic'],
@@ -14,6 +17,7 @@ const roboto_condensed = Roboto_Condensed({
     display: 'swap',
 })
 
+// declaring a custom typography variant
 declare module '@mui/material/Typography' {
     interface TypographyPropsVariantOverrides {
         settingTitle: true;
@@ -21,6 +25,7 @@ declare module '@mui/material/Typography' {
 }
 
 const themeOptions = {
+    // setting the typography variants
     typography: {
         h1: {
             fontFamily: roboto_condensed.style.fontFamily,
@@ -51,10 +56,12 @@ const themeOptions = {
             fontSize: '15pt',
         },
     },
+    // setting the global border radius for all components
     shape: {
         borderRadius: 28,
     },
     components: {
+        // overwriting the border radius for the MuiPaper component (used in dd
         MuiPaper: {
             styleOverrides: {
                 root: {
