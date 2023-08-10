@@ -61,7 +61,7 @@ const themeOptions = {
         borderRadius: 28,
     },
     components: {
-        // overwriting the border radius for the MuiPaper component (used in dd
+        // overwriting the border radius for the MuiPaper component (used dropdown menus)
         MuiPaper: {
             styleOverrides: {
                 root: {
