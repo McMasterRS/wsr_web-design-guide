@@ -58,7 +58,7 @@ export default function Navbar() {
                                 key={page[0]}
                                 component={Link}
                                 href={page[1]}
-                                sx={{my: 2, color: 'white', display: 'block'}}
+                                sx={{mx: 0.3, my: 2, color: 'white', display: 'block'}}
                             >
                                 {page[0]}
                             </Button>
