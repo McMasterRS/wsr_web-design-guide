@@ -85,6 +85,7 @@ export default function Page_1() {
                          justifyContent="center"
                          alignItems="center">
                         <Typography variant="h1">Page 1</Typography>
+                        {/* only show the Download string on screens that are medium or larger */}
                         <Tooltip title={useMediaQuery(useTheme().breakpoints.down('md')) ? 'Download' : ''} >
                             <MacButton
                                 id="download-button"
