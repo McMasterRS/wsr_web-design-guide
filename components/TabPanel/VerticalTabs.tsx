@@ -61,12 +61,15 @@ export default function VerticalTabs() {
     const tabs = ['Notifications', 'Privacy', 'Accessibility', 'Account'];
     const icons = [<NotificationsNoneOutlinedIcon key={'notifications'}/>, <LockOutlinedIcon key={'privacy'}/>, <SettingsAccessibilityOutlinedIcon key={'accessibility'}/>, <ManageAccountsOutlinedIcon key={'account'}/>]
 
+    // function that handles changing tabs in the tabs drawer
     const handleChangeDrawer = (e: React.MouseEvent<HTMLDivElement>, newValue: number) => {
         setValue(newValue);
     }
 
+    // declaring a state variable that determines if the tabs drawer is open and initializing it to false
     const [state, setState] = React.useState(false);
 
+    // function used to open and close the tabs drawer
     const toggleDrawer =
         (open: boolean) =>
             (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -80,6 +83,7 @@ export default function VerticalTabs() {
                 setState(open);
             };
 
+    // function used to render the items inside the tabs drawer
     const list = () => (
         <Box
             sx={{ width:  250 }}
@@ -117,9 +121,11 @@ export default function VerticalTabs() {
                         <Tab key={text} label={text} icon={icons[index]} iconPosition="start" {...a11yProps(index)} sx={{justifyContent: 'left'}}/>
                     ))}
                 </Tabs>
+                {/* adding an icon button to open/close the drawer on mobile devices */}
                 <Box sx={{paddingTop: '19px'}}>
                     <IconButton title="Settings Drawer" aria-label="settings-menu" onClick={toggleDrawer(true)} sx={{ display: {xs: 'inline', md: 'none'}, height:'40px'}}> <FormatListBulletedOutlinedIcon /> </IconButton>
                 </Box>
+                {/* rendering the Drawer component */}
                 <Drawer
                     anchor={"left"}
                     open={state}
@@ -139,9 +145,10 @@ export default function VerticalTabs() {
                         height: '50%',
                         display: {xs: 'flex', md: 'none'}
                     }}                        >
-                    {list()}
+                    {list() /* calling list() to render the content of the tabs drawer */}
                 </Drawer>
                 <TabPanel value={value} index={0}>
+                    {/* adding a Typography component with the title of the active tab (only visible on small screens) */}
                     <Typography
                         sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'left', paddingLeft: '10px'}}
                         variant="settingTitle"

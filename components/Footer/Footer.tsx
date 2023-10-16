@@ -12,15 +12,21 @@ export default function Footer() {
     return (
         <Paper
             sx={{
+                // the position is relative on xs and sm screens
                 [useTheme().breakpoints.between('xs', 'md')]: {
                     position: 'relative',
                 },
+                // the position is fixed on screen that are md or larger
                 [useTheme().breakpoints.up('md')]: {
                     position: 'fixed',
                 },
                 bottom: 0,
                 width: '100%',
                 borderRadius: 0,
+                // setting the footer height to 93 on xs and sm screens
+                [useTheme().breakpoints.between('xs', 'md')]: {
+                    height: '93',
+                },
             }}
             component="footer"
             square
@@ -31,6 +37,7 @@ export default function Footer() {
                     sx={{
                         flexGrow: 1,
                         justifyContent: 'center',
+                        // only show this component on md screens
                         display: {xs: 'none', md: 'flex'},
                         my: 1,
                     }}
@@ -40,6 +47,7 @@ export default function Footer() {
                     sx={{
                         flexGrow: 1,
                         justifyContent: 'space-between',
+                        // only show this component on md screens
                         display: {xs: 'none', md: 'flex'}
                     }}
                     container
@@ -102,10 +110,11 @@ export default function Footer() {
                     </Grid>
                 </Grid>
                 <Stack
-                    direction="column"
+                    direction="column" // the components inside Stack will be stacked vertically
                     justifyContent="space-between"
                     alignItems="center"
                     spacing={1}
+                    // only show this component on xs screens
                     sx={{display: {xs: 'flex', md: 'none'}}}
                 >
                     <Box

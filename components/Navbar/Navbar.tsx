@@ -43,8 +43,10 @@ export default function Navbar() {
     const router = useRouter()
     const currentRoute = usePathname()
 
+    // declaring a state variable that determines if the drawer is open and initializing it to false
     const [state, setState] = React.useState(false);
 
+    // function used to open and close the navigation drawer
     const toggleDrawer =
         (open: boolean) =>
             (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -58,8 +60,10 @@ export default function Navbar() {
                 setState(open);
             };
 
-    const icons = [<LooksOneIcon key={'transcripts-page'} />, <LooksTwoIcon key={'privacy-policy'}/>]
+    // array containing the icons used for Page 1 and Page 2 in the navigation drawer
+    const icons = [<LooksOneIcon key={'page-1'} />, <LooksTwoIcon key={'page-2'}/>]
 
+    // function used to render the items inside the drawer
     const pages_drawer = () => (
         <Box
             paddingTop={1}
@@ -68,6 +72,7 @@ export default function Navbar() {
             onKeyDown={toggleDrawer(false)}
         >
             <List>
+                {/* iterating over the pages array and rendering a ListItem for each page */}
                 {pages.map((page, index) => (
                     <ListItem key={page[0]} disablePadding>
                         <ListItemButton onClick={toggleDrawer(false)} component={Link} href={page[1]} selected= {currentRoute === page[1]} >
@@ -79,6 +84,7 @@ export default function Navbar() {
                     </ListItem>
                 ))}
             </List>
+            {/* rendering the light/dark mode toggle and setting button at the bottom of the drawer */}
             <List style={{ position: "absolute", bottom: "0", right: "0", left: "0"}}>
                 <ListItem key={'mode'} disablePadding>
                     <ListItemButton onClick={colorMode.toggleColorMode}
@@ -114,8 +120,10 @@ export default function Navbar() {
         >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
+                    {/* the contents of this box will only be shown on mobile devices */}
                     <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
                         <Tooltip enterDelay={500} title={state ? "Close App Drawer" : "Open App Drawer"}>
+                            {/* adding an icon button to open/close the drawer */}
                             <MacIconNavButton
                                 size="large"
                                 aria-controls="menu-appbar"
@@ -126,6 +134,7 @@ export default function Navbar() {
                                 {state ? <ClearIcon /> : <MenuIcon />}
                             </MacIconNavButton>
                         </Tooltip>
+                        {/* rendering the Drawer component */}
                         <Drawer
                             anchor={"left"}
                             open={state}
@@ -145,13 +154,14 @@ export default function Navbar() {
                                 display: {xs: 'flex', md: 'none'}
                             }}
                         >
-                            {pages_drawer()}
+                            {pages_drawer() /* calling pages_drawer() to render the content of the drawer */}
                         </Drawer>
                         <Box
                             justifyContent="center"
                             alignItems="center"
                             sx={{alignItems: 'center', display: {xs: 'flex', md: 'none'}}}
                         >
+                            {/* rendering the small emblem version of the McMaster logo */}
                             <Box
                                 component="img"
                                 sx={{
