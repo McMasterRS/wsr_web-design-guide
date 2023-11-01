@@ -53,6 +53,7 @@ export function Provider({ children } : {children: React.ReactNode}) {
                     MuiButtonBase: {
                         styleOverrides: {
                             root: {
+                                // adding a solid outline that is 2px thick and uses the current primary theme color (in light or dark mode)
                                 "&:focus-visible": {
                                     outline: `2px solid ${primary_color}`,
                                 },

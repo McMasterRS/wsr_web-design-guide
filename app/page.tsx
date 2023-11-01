@@ -121,6 +121,8 @@ export default function Home() {
                         value={selectedFiles}
                         onChange={handleChange}
                         hideSizeText
+                        // setting the placeholder text color to a W3C-compliant shade of grey depending on
+                        // the current theme mode (light/dark)
                         sx={{
                             "& .MuiFileInput-placeholder": {
                                 color:  (useTheme().palette.mode === 'light' ? '#767676' : '#d3d3d3') + '!important',

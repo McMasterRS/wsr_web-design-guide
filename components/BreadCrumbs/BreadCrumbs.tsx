@@ -35,6 +35,7 @@ export default function BreadCrumbs() {
     return (
         <Box sx={{paddingBottom: 2}}>
             <Stack direction="row" spacing={2}>
+                {/* adding a title to the back button using the "title" prop on MacButton (inherited from MuiButton) */}
                 <MacButton variant="contained" mainColor="primary" onClick={() => router.back()} title={"Back"}>
                     <ArrowBackIcon />
                 </MacButton>

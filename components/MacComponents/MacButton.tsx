@@ -16,6 +16,11 @@ export const MacButton = styled(MuiButton, {shouldForwardProp: (prop) => prop !=
         backgroundColor: props.mainColor === 'secondary' ? '#DBDBDD':'#5E6A71',
         color: useTheme().palette.mode === 'dark' ? (props.mainColor === 'primary' ? '#FFFFFF' : '') : '',
     },
+    // setting the focus indicator style
+    // in light mode: primary buttons will have a black outline and grey background
+    // in light mode: secondary buttons will have a maroon outline and light grey background
+    // in dark mode: primary buttons will have a desaturated maroon (pink) outline and grey background
+    // in dark mode: secondary buttons will have a vivid maroon outline and light grey background
     "&:focus-visible": {
         color: useTheme().palette.mode === 'dark' ? (props.mainColor === 'primary' ? '#FFFFFF' : '') : '',
         backgroundColor:

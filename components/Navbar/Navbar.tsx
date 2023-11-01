@@ -121,6 +121,7 @@ export default function Navbar() {
             position="relative"
             sx={{zIndex: theme => theme.zIndex.drawer + 1, borderRadius: 0}}
         >
+            {/* setting the zIndex to 1300 to ensure that the button always renders on top of other component */}
             <Box sx={{zIndex: 1300}}>
                 <SkipLink className={styles_skip.skipLink} skipTo={"main:first-of-type"}>
                     <SkipButton mainColor={"primary"} sx={{marginTop:2.4, marginLeft:2, color: 'white'}}>Skip to main content</SkipButton>

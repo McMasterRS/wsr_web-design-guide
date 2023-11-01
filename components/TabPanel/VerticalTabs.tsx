@@ -157,6 +157,7 @@ export default function VerticalTabs() {
                         Notifications
                     </Typography>
                     <FormControl sx={{m: 1, minWidth: 300}}>
+                        {/* the value of htmlFor should match the id of the Select component */}
                         <InputLabel id="demo-simple-select-label" htmlFor="demo-simple-select">
                             Demo Dropdown Menu
                         </InputLabel>

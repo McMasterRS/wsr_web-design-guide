@@ -15,6 +15,7 @@
     background: white;
 }
 
+/* Specific styles when tabbing through an active navbar link (solid yellow border, white text and grey background) */
 .active:focus-visible {
     color: white;
     background: #707070;
