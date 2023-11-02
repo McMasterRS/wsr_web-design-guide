@@ -13,7 +13,6 @@ import {alpha, styled, useTheme} from '@mui/material/styles';
 import Typography from '@mui/material/Typography'
 import {MacButton} from "@/components/MacComponents/MacButton";
 import useMediaQuery from '@mui/material/useMediaQuery';
-import Tooltip from "@mui/material/Tooltip";
 
 const StyledMenu = styled((props: MenuProps) => (
     <Menu
@@ -84,7 +83,6 @@ export default function Page_1() {
                          alignItems="center">
                         <Typography variant="h1">Page 1</Typography>
                         {/* only show the Download string on screens that are medium or larger */}
-                        <Tooltip title={useMediaQuery(useTheme().breakpoints.up('md')) ? 'Download' : ''} >
                             <MacButton
                                 id="download-button"
                                 sx={{
@@ -107,8 +105,6 @@ export default function Page_1() {
                             >
                                 {useMediaQuery(useTheme().breakpoints.up('md')) ? 'Download' : ''}
                             </MacButton>
-                        </Tooltip>
-
                         <StyledMenu
                             id="download-menu"
                             MenuListProps={{
